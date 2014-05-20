@@ -197,9 +197,8 @@ func Allow(opts *Options) http.HandlerFunc {
 			}
 			res.WriteHeader(http.StatusOK)
 			return
-		} else {
-			headers = opts.Header(origin)
 		}
+		headers = opts.Header(origin)
 
 		for key, value := range headers {
 			res.Header().Set(key, value)
