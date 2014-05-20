@@ -193,6 +193,7 @@ func Allow(opts *Options) http.HandlerFunc {
 			// TODO: if preflight, respond with exact headers if allowed
 			headers = opts.PreflightHeader(origin, requestedMethod, requestedHeaders)
 			res.WriteHeader(http.StatusOK)
+			return
 		} else {
 			headers = opts.Header(origin)
 		}
